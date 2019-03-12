@@ -1,13 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-    <div>
-        <ol>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ol>
-    </div>
-    , document.getElementById('root')
-);
+function MyInfo () {
+    return (
+        <div>
+            <h1>Name</h1>
+            <p>Text about some issue.</p>
+            <ul>
+                <li>Tokyo</li>
+                <li>Madrid</li>
+                <li>New York</li>
+            </ul>
+        </div>
+    )
+}
+
+ReactDOM.render(<MyInfo />, document.getElementById('root'));
