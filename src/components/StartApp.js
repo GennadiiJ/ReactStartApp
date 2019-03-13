@@ -1,15 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
-import MainContent from "./MainContent";
-import Footer from "./Footer";
 
 function StartApp () {
-    return(
-        <div>
-            <Navbar />
-            <MainContent />
-            <Footer />
-        </div>
+    return (
+        <main className="navBar">
+            This is header.
+        </main>
     )
 }
 
