@@ -1,14 +1,4 @@
-body {
-  margin: 0;
-}
-
-.navBar {
-  height: 100px;
-  background-color: aquamarine;
-  color: red;
-  font-size: 25px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.joke {
+  margin: 20px;
+  border: solid 2px red;
 }
