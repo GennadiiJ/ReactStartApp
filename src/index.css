@@ -1,4 +1,14 @@
-.joke {
+.component {
   margin: 20px;
-  border: solid 2px red;
+  border: solid 2px black;
+  color: violet;
+  background-color: azure;
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+}
+
+.component span {
+  font-weight: bold;
+  color: black;
 }

@@ -1,13 +1,19 @@
 import React from "react";
-import Joke from "./components/Joke";
+import productData from "./my-data/ProductsData"
+import Product from "./components/Product"
 
 function StartApp () {
+    const productComponents = productData.map(elem =>
+        <Product 
+            key={elem.id} 
+            price={elem.price} 
+            desc={elem.description} 
+            name={elem.name.toUpperCase()}
+         />
+    )
     return (
         <div>
-            <Joke text={{question: "1. Why cat are so fast?", punchLine: " they are small."}} />
-            <Joke text={{question: "2. Why code is hard to read", punchLine: " you wrote it."}} />
-            <Joke text={{question: "3. Why dogs are good", punchLine: " they are smart."}} />
-            <Joke text={{question: "4. Why sky is blue"}} />
+            {productComponents}
         </div>
     )
 }
