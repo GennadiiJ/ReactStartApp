@@ -9,7 +9,8 @@ const products = [
         id: 2,
         name: "pen",
         price: 20,
-        description: "Pen for writing."
+        description: "Pen for writing.",
+        available: true
     },
     {
         id: 3,
