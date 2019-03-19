@@ -1,17 +1,40 @@
 import React, {Component} from "react";
 
 class StartApp extends Component {
-    someFunction(){
-        console.log("I was cklicked.")
+    constructor() {
+        super();
+        this.state = {
+            count: 0
+        }
+        this.handleClickPlus = this.handleClickPlus.bind(this);
+        this.handleClickMinus = this.handleClickMinus.bind(this);
     }
+
+    handleClickPlus() {
+        this.setState(prevState => {
+            return {
+                count: prevState.count + 1
+            }
+        });
+    }
+
+    handleClickMinus() {
+        this.setState(prevState => {
+            return {
+                count: prevState.count >= 1 ? prevState.count - 1 : 0
+            }
+        })
+    }
+
     render() {
         return (
-           <div>
-               <img onMouseOver={() => console.log("Hoverd")} src="https://fillmurray.com/200/100" alt=""/>
-               <br/>
-               <br/>
-               <button onClick={this.someFunction}>Click me</button>
-           </div> 
+            <div>
+                <h1>{this.state.count}</h1>
+                <div>
+                    <button className="left" onClick={this.handleClickPlus}>Increase</button>
+                    <button className="right" onClick={this.handleClickMinus}>Decrease</button>
+                </div>
+            </div>
         )
     }
 }
