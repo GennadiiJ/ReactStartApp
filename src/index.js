@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import StartApp from "./StartApp"
-import "./index.css";
+import "./index.css"
 
-ReactDOM.render(<StartApp />, document.getElementById("root"));
+ReactDOM.render(<StartApp /> , document.getElementById("root"));

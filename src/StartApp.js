@@ -1,41 +1,37 @@
-import React, {Component} from "react";
+import React from "react";
+import TodoItem from "./components/TodoItem"
+import todosData from "./my-data/todosData"
 
-class StartApp extends Component {
+class StartApp extends React.Component {
     constructor() {
         super();
         this.state = {
-            count: 0
+            todos: todosData
         }
-        this.handleClickPlus = this.handleClickPlus.bind(this);
-        this.handleClickMinus = this.handleClickMinus.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleClickPlus() {
+    handleChange(id) {
         this.setState(prevState => {
+            const updatedTodos = prevState.todos.map((item) => {
+                if (item.id === id) {
+                    item.completed = !item.completed;
+                }
+                return item;
+            });
             return {
-                count: prevState.count + 1
+                todos: updatedTodos
             }
         });
     }
-
-    handleClickMinus() {
-        this.setState(prevState => {
-            return {
-                count: prevState.count >= 1 ? prevState.count - 1 : 0
-            }
-        })
-    }
-
+    
     render() {
+        const todoItems = this.state.todos.map(item => <TodoItem handleChange={this.handleChange} key={item.id} item={item}/>);
         return (
-            <div>
-                <h1>{this.state.count}</h1>
-                <div>
-                    <button className="left" onClick={this.handleClickPlus}>Increase</button>
-                    <button className="right" onClick={this.handleClickMinus}>Decrease</button>
-                </div>
+            <div className="todo-list">
+                {todoItems}
             </div>
-        )
+        );    
     }
 }
 
